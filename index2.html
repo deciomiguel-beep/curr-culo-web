@@ -1,0 +1,278 @@
+<!-- Define o tipo de documento como HTML5 -->
+<!doctype html>
+
+<!-- Início do documento HTML, com idioma definido como português do Brasil -->
+<html lang="pt-BR">
+
+<head>
+  <!-- Define a codificação de caracteres como UTF-8 (suporta acentos) -->
+  <meta charset="utf-8" />
+  
+  <!-- Define a escala inicial e a largura da página para dispositivos móveis -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Título exibido na aba do navegador -->
+  <title>Currículo WEB</title>
+
+  <!-- Início do estilo CSS interno -->
+  <style>
+    /* Define variáveis globais para reutilização */
+    :root {
+      --page-width: 800px; /* Largura da "folha" simulando A4 */
+      --accent: #111;       /* Cor principal do texto */
+      --muted: #444;        /* Cor secundária (texto apagado) */
+    }
+
+    /* Estilo base para html e body */
+    html, body {
+      height: 100%;                      /* Ocupa altura total da tela */
+      margin: 0;                         /* Remove margens padrões */
+      font-family: Arial, Helvetica, sans-serif; /* Define fontes */
+      background: #e9e9e9;              /* Cor de fundo da página */
+      color: var(--accent);             /* Usa cor principal para texto */
+    }
+
+    /* Caixa principal do conteúdo, simulando uma folha de papel */
+    .paper {
+      width: var(--page-width);                 /* Largura definida */
+      max-width: calc(100% - 32px);             /* Responsivo, limite lateral */
+      margin: 28px auto;                        /* Centraliza verticalmente */
+      background: #fff;                         /* Fundo branco */
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);  /* Sombra para destacar */
+      padding: 36px 56px;                       /* Espaçamento interno */
+      box-sizing: border-box;                   /* Inclui padding no tamanho */
+      line-height: 1.45;                        /* Espaçamento entre linhas */
+    }
+
+    /* Estilo para o cabeçalho (centralizado) */
+    header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    /* Nome da escola em destaque */
+    header .school {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.6px; /* Espaço entre letras */
+    }
+
+    /* Subtítulo abaixo da escola */
+    header .sub {
+      font-size: 15px;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* Título principal "CURRÍCULO" */
+    .titulo-centro {
+      text-align: center;
+      margin: 10px 0 18px;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: none;
+    }
+
+    /* Nome do candidato */
+    .nome {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 6px 0 4px;
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Linha abaixo do nome para destaque */
+    .nome-underline {
+      border-bottom: 2px solid #111;
+      padding-bottom: 8px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    /* Bloco de informações de contato */
+    .contato {
+      text-align: center;
+      font-size: 13px;
+      margin: 14px 0 18px;
+      color: var(--muted);
+      font-weight: bold; /* Texto em negrito */
+    }
+
+    /* Links dentro do contato */
+    .contato a {
+      color: var(--muted);
+      text-decoration: underline; /* Sublinhado */
+    }
+
+    /* Seções do currículo */
+    section {
+      margin-bottom: 14px;
+    }
+
+    /* Títulos das seções */
+    section h3 {
+      font-size: 14px;
+      margin: 0 0 8px;
+      text-decoration: underline;          /* Sublinhado */
+      text-underline-offset: 6px;          /* Distância da linha */
+      font-weight: 700;
+    }
+
+    /* Parágrafos e listas */
+    p, ul {
+      margin: 0;
+      font-size: 13px;
+      color: #222;
+    }
+
+    /* Listas (ul) com indentação e espaçamento */
+    ul {
+      margin-left: 18px;
+      margin-top: 6px;
+    }
+
+    /* Itens da lista */
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* Estilo para duas colunas (caso usado) */
+    .two-col {
+      display: flex;
+      gap: 32px;                  /* Espaço entre colunas */
+      align-items: flex-start;
+      flex-wrap: wrap;            /* Permite quebra de linha */
+    }
+
+    /* Experiência profissional - item */
+    .xp-item {
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    /* Período e texto pequeno da experiência */
+    .xp-item .period,
+    .xp-item .small {
+      font-size: inherit;
+      color: var(--muted);
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    /* Destaque para o nome do cargo ou empresa */
+    .xp-item strong {
+      font-size: inherit;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* Estilo para quando o currículo for impresso */
+    @media print {
+      body { background: white; } /* Remove fundo cinza */
+      .paper { box-shadow: none; margin: 0; padding: 36px; } /* Remove sombra e margens */
+    }
+
+    /* Responsividade para telas menores (ex: celulares) */
+    @media (max-width: 520px) {
+      .paper { padding: 20px; } /* Reduz o padding */
+      header .school { font-size: 18px; } /* Ajusta tamanho da fonte */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Container principal do currículo -->
+  <div class="paper" role="main">
+
+    <!-- Título do currículo -->
+    <div class="titulo-centro">CURRÍCULO</div>
+
+    <!-- Nome do candidato com sublinhado -->
+    <div class="nome-underline">
+      <span class="nome">DÉCIO MIGUEL FERREIRA GUSMÃO</span>
+    </div>
+
+    <!-- Informações de contato do candidato -->
+    <div class="contato">
+      Avenida Montes Claros, Nº 137, centro<br>
+      Cep: 39437-000 Lontra/MG<br>
+      Tel: (38) 999817-6049 &nbsp; • &nbsp;
+      <a href="mailto:deciomiguelferreiragusmao@gmail.com">deciomiguelferreiragusmao@gmail.com</a><br>
+      Brasileiro, solteiro, 16 anos.
+    </div>
+
+    <!-- Seção de objetivo profissional -->
+    <section>
+      <h3>Objetivo:</h3>
+      <p>Atuar na Área de Informática</p>
+    </section>
+
+    <!-- Seção de qualificação profissional -->
+    <section>
+      <h3>Síntese de Qualificações:</h3>
+      <ul>
+        <li>Atuação na área de atendimento ao público como vendedor;</li>
+        <li>Ministração de aulas teóricas não institucionais;</li>
+      </ul>
+    </section>
+
+    <!-- Formação acadêmica -->
+    <section>
+      <h3>Formação acadêmica</h3>
+      <ul>
+        <li>Técnico Formado em Atendente de Fármacia e Hospitais - Mais Brasil Cursos</li>
+        <li>Técnico Formado em Atendente de Lojas e Caixa - Mais Brasil Cursos</li>
+        <li>Técnico Formado em Atendente de Banco e Administração - Mais Brasil Cursos</li>
+        <li>Técnico Formado em Informática - Mais Brasil Cursos</li>
+        <li>Cursando Técnico em Informática - EEGR/Lontra</li>
+        <li>Formado em Criando Conteúdo com o Canva - Modulo 1 (1MIO)</li>
+        <li>Formado em Criando Conteúdo com o Canva - Modulo 2 (1MIO)</li>
+        <li>Formado em Lógica de programação com Portugol - Modulo 1 (1MIO)</li>
+        <li>Formado em Lógica de programação com Portugol - Modulo 2 (1MIO)</li>
+        <li>Formado em Dono do meu próprio negócio: como empreender - 1MIO</li>
+      </ul>
+    </section>
+
+    <!-- Conhecimentos em informática -->
+    <section>
+      <h3>Informática</h3>
+      <p>Conhecimentos em pacote Office e Internet.</p>
+    </section>
+
+    <!-- Experiência profissional -->
+    <section>
+      <h3>Experiência profissional</h3>
+
+      <div class="xp-item">
+        <span class="period">02/2023 à 12/2023</span><br>
+        <strong>Obradecio - Comércio Local</strong><br>
+        <span class="small">Atendente</span>
+      </div>
+
+      <div class="xp-item">
+        <span class="period">04/2020 à 08/2020</span><br>
+        <strong>Professor de Reforço - Particular</strong><br>
+        <span class="small">Não Institucional (Para aluno do 5º ano Fundamental)</span>
+      </div>
+
+      <div class="xp-item">
+        <strong>Atendente de Agência de Turismo</strong><br>
+        <div class="small">Guilhereme Tur - FreeLancer</div>
+      </div>
+    </section>
+
+    <!-- Outras informações relevantes -->
+    <section>
+      <h3>Outras Informações</h3>
+      <p>CV: 
+        <a href="http://lattes.cnpq.br/1984250125255766" target="_blank" rel="noopener">
+          http://lattes.cnpq.br/1984250125255766
+        </a>
+      </p>
+    </section>
+
+  </div>
+</body>
+</html>
