@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meus Sites</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .lista {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .site {
+      padding: 12px 20px;
+      background: #1f1f1f;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .site:hover {
+      background: #333;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Meus Sites</h1>
+
+    <div class="lista" id="lista-sites"></div>
+  </div>
+
+  <script>
+    const sites = [
+      { nome: "CookFlix", link: "https://deciomiguel-beep.github.io/Cooking-40-Movies/" },
+      { nome: "Meu Jogo do Homem Aranha", link: "https://deciomiguel-beep.github.io/Jogo-do-Homem-Aranha/" },
+      { nome: "Agendamento Escolar", link: "https://deciomiguel-beep.github.io/Agendamento-de-Salas/" }
+    ];
+
+    const lista = document.getElementById("lista-sites");
+
+    sites.forEach(site => {
+      const div = document.createElement("div");
+      div.className = "site";
+      div.innerText = site.nome;
+
+      div.onclick = () => {
+        window.open(site.link, "_blank");
+      };
+
+      lista.appendChild(div);
+    });
+  </script>
+</body>
+</html>
